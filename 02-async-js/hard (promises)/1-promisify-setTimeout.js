@@ -3,4 +3,14 @@
 */
 
 function wait(n) {
+    return new Promise(resolve => {
+        setTimeout(()=>{
+        resolve('YAAAY RESOLVED')
+        }, 1000*n)
+    })
 }
+
+object = wait(4)
+object.then((data)=> {
+    console.log(data)
+})

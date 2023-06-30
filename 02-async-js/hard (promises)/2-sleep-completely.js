@@ -3,6 +3,19 @@
  * During this time the thread should not be able to do anything else.
  */
 
-function sleep (seconds) {
 
-}
+async function main() {
+    function sleep(n) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => resolve("Finish"), n * 1000);
+      });
+    }
+  
+    console.log("start");
+    const res = await sleep(3);
+    console.log("End did not get printed", res);
+    console.log("end");
+  }
+  
+  main();
+
